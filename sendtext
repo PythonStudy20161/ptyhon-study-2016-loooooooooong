@@ -3,3 +3,19 @@ import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 s.connect(('192.168.110.223', 514))
 s.send("'asdasdasds'")
+
+#send：log文件中指定内容
+import socket
+import sys
+address =('192.168.110.223', 514)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+f = file('/Users/user/tmp','r')
+while True:
+	line = f.readline().strip()
+	if len(line) == 0:
+		break
+	msg = '<%d> %s' % (2+2,line)
+	if 'X-XSS-Protection:' in line:
+		s.sendto(msg, address)
+f.close()
+s.close()
