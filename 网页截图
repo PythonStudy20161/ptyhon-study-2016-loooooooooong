@@ -36,7 +36,7 @@ def capture(url, save_fn):
     if "scroll-done" in browser.title:
       break
     time.sleep(1)
-
+#截图路径配置在这里
   browser.save_screenshot("/Users/user/Documents/png/"+save_fn)
   print save_fn
   browser.close()
