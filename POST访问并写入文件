@@ -16,7 +16,7 @@ for customer_id in range(92511415,92521419):
                     ,"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:44.0)Gecko/20100101 Firefox/44.0"
                     ,"Cookie": "CookieGuid=4563a8a7-565b-4a1d-903a-115eec5869b2;   Esid=e1ef353a-1986-4e52-a1dd-75c69430e732;  Lgid=bSBHB8jRbX7bBfD%2fO9ffP3x38PUueNHc1i1xHyFMxV20x6zT722uCWepS%2bXO9hq2UcY%2f7F2RBy8d9mjgKWlVFm0J8tbtissKS1Vh%2frtfomY%3d;" }
  
-        httpClient = httplib.HTTPConnection("bus.elong.com", 80, timeout=30)
+        httpClient = httplib.HTTPConnection("bus.baidu.com", 80, timeout=30)
         httpClient.request("POST", "/customerInfo", params, headers)
  
         response = httpClient.getresponse()
